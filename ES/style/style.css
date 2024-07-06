@@ -1,0 +1,36 @@
+body {
+    background-color: gray;
+}
+
+div[id='warning']{
+    color: rgb(100, 0, 0);
+}
+
+div[id='converter']{
+    color: darkblue;
+}
+
+textarea{
+    font-size: 16px;
+    font-family: arial;
+}
+
+p{
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+a{
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+option{
+    font-size: 16px;
+    font-family: arial;
+}
+
+input[type="button"]{
+    font-size: 16px;
+    font-family: arial;
+}

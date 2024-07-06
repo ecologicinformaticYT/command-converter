@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>command-converter alpha-0.1 - Convertir comandos de Windows a comandos de Debian</title>
+        <link rel="stylesheet" href="style/style.css">
+        <link rel="icon" href="images/logo.jpg">
+        <script src="js/cmd-converter.js"></script>
+    </head>
+    <body>
+        <div id="converter">
+            <h1>- Entrada -</h1>
+            <textarea id="IN" rows="15"></textarea>
+            <h1>- Salida -</h1>
+            <textarea id="OUT" readonly rows="15"></textarea>
+            <h1>* Convertir *</h1>
+            <select id="mode">
+                <option value="windows/linux">Windows (.bat) -> Linux/Debian (.sh)</option>
+                <option value="linux/windows">Linux/Debian (.sh) -> Windows (.bat)</option>
+            </select>
+            <input type="button" value="Haga clic aquí para convertir" onclick="convert_command(document.getElementById('IN').value)">
+        </div>
+        <br>
+        <div id="warning">
+            <p>ADVERTENCIA : Este convertidor puede no ser 100% preciso</p>
+        </div>
+        <br>
+        <div id="footer">
+            <p>©2024 404Studio (por Arthur CALON) - command-converter, todos los derechos reservados</p>
+            <a href="useterms.html">condiciones de uso y política de privacidad</a>
+            <br>
+            <img src="images/logo.jpg" alt="logo de command-converter">
+        </div>
+    </body>
+</html>
