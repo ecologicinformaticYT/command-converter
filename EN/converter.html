@@ -1,35 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>command-converter alpha-0.1 - Convert Windows commands to Debian commands</title>
-        <link rel="stylesheet" href="style/style.css">
-        <link rel="icon" href="images/logo.jpg">
-        <script src="js/cmd-converter.js"></script>
-    </head>
-    <body>
-        <div id="converter">
-            <h1>- Input -</h1>
-            <textarea id="IN" rows="15"></textarea>
-            <h1>- Output -</h1>
-            <textarea id="OUT" readonly rows="15"></textarea>
-            <h1>* Convert *</h1>
-            <select id="mode">
-                <option value="windows/linux">Windows (.bat) -> Linux/Debian (.sh)</option>
-                <option value="linux/windows">Linux/Debian (.sh) -> Windows (.bat)</option>
-            </select>
-            <input type="button" value="Click here to convert" onclick="convert_command(document.getElementById('IN').value)">
-        </div>
-        <br>
-        <div id="warning">
-            <p>WARNING : This converter may not be 100% accurate</p>
-        </div>
-        <br>
-        <div id="footer">
-            <p>©2024 404A Studio (by Arthur CALON) - command-converter, all rights reserved</p>
-            <a href="useterms.html">use terms & privacy policy</a>
-            <br>
-            <img src="images/logo.jpg" alt="logo de command-converter">
-        </div>
-    </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>command-converter alpha-0.2 - Convert Windows commands to Debian commands</title>
+		<link rel="stylesheet" href="../style/style.css">
+		<link rel="icon" href="../images/logo.jpg">
+		<script src="../js/cmd-converter.js"></script>
+	</head>
+	<body>
+		<h1>Convert</h1>
+		<div id="converter">
+			<div class="list">
+				<div class="element">
+					<h2>Input</h2>
+					<textarea id="IN" rows="15"></textarea>
+				</div>
+				<div class="element">
+					<h2>Output</h2>
+					<textarea id="OUT" rows="15"></textarea>
+				</div>
+			</div>
+			<select id="mode">
+				<option value="windows/linux">Windows (.bat) ➜ Linux/Debian (.sh)</option>
+				<option value="linux/windows">Linux/Debian (.sh) ➜ Windows (.bat)</option>
+			</select>
+		</div>
+		<div id="warning">
+			<p>WARNIG : this converter might not be 100% accurate</p>
+		</div>
+		</div>
+		<div class="bgimg-box" style="transform: translate(20em, -45em) rotate(-20deg);">
+			<img src="../images/star.svg" class="background-image">
+		</div>
+		<div class="bgimg-box" style="transform: translate(50em, -5em) rotate(30deg);">
+			<img src="../images/cup.svg" class="background-image">
+		</div>
+		<div class="bgimg-box" style="transform: translate(70em, -30em) rotate(50deg);">
+			<img src="../images/heart.svg" class="background-image">
+		</div>
+		<div class="bgimg-box" style="transform: translate(65em, -52em) rotate(20deg);">
+			<img src="../images/crown.svg" class="background-image">
+		</div>
+		<div class="bgimg-box" style="transform: translate(10em, -25em) rotate(-50deg);">
+			<img src="../images/cloud.svg" class="background-image">
+		</div>
+		<footer>
+			<div class="list">
+				<div>
+					<p>©2024 404A Studio (html and javascript by Arthur CALON and style by Nitn@f10) - command-converter, all rights reserved</p>
+					<a href="useterms.html">use terms &amp; privacy policy</a>
+				</div>
+				<img src="../images/logo.jpg" alt="logo de command-converter" style="border-radius: 20px;">
+			</div>
+			<select id="l">
+                <option href="command-converter-main/EN/converter.html" id="en"><p>EN (GB)</p><img src="../images/flag GB.svg GB.svg"></option>
+				<option href="command-converter-main/FR/converter.html" id="fr"><p>FR</p><img src="../images/flag FR.svg FR.svg"></option>
+				<option href="command-converter-main/SP/converter.html" id="sp"><p>SP</p><img src="../images/flag SP.svg"></option>
+			</select>
+		</footer>
+	</body>
 </html>
