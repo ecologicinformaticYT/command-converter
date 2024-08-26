@@ -12,7 +12,7 @@ body {
 	background: 0 0/auto repeat radial-gradient(farthest-side at 0 100%,#c2c2ff 0,#c2e7ff 25%,#ffd1f9 50%,#ecebff 75%,#c2c2ff 100%),0 0 /auto repeat radial-gradient(farthest-corner at 100% 100%,#c2c2ff 0,#ecebff 25%,#ffd1f9 50%,#c2e7ff 75%,#c2c2ff 100%);
 	background-blend-mode: overlay;
 	text-align: center;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 footer{
