@@ -1,124 +1,161 @@
-*{
-    transition: 2s ease-in-out;
-    border-radius: 20px;
-    margin: 2px;
-    font-size: 14px;
-    font-family: sans-serif;
-    z-index: 2;
-    position: relative;
+* {
+  border-radius: 20px;
+  margin: 2px;
+  font-family: sans-serif;
+  position: relative;
 }
 
 body {
-	background: 0 0/auto repeat radial-gradient(farthest-side at 0 100%,#c2c2ff 0,#c2e7ff 25%,#ffd1f9 50%,#ecebff 75%,#c2c2ff 100%),0 0 /auto repeat radial-gradient(farthest-corner at 100% 100%,#c2c2ff 0,#ecebff 25%,#ffd1f9 50%,#c2e7ff 75%,#c2c2ff 100%);
-	background-blend-mode: overlay;
-	text-align: center;
-    overflow-x: hidden;
+  background: 0 0/auto repeat radial-gradient(farthest-side at 0 100%, #c2c2ff 0, #c2e7ff 25%, #ffd1f9 50%, #ecebff 75%, #c2c2ff 100%), 0 0 /auto repeat radial-gradient(farthest-corner at 100% 100%, #c2c2ff 0, #ecebff 25%, #ffd1f9 50%, #c2e7ff 75%, #c2c2ff 100%);
+  background-blend-mode: overlay;
+  text-align: center;
+  overflow-x: hidden;
 }
 
-footer{
-background: #fcf5ff;
-    border-radius: 0px;
-    margin: 0px;
-    padding: 1em;
-    margin-top: -13em;
-    border: none;
-    width: 100%;
+footer {
+  background: #fcf5ff;
+  border-radius: 0px;
+  padding: 1em;
+  width: 100%;
 }
 
-
-
-h1{ 
-    background: linear-gradient(45deg, #0bf 0%, #28f 25%, #82f 60%, #28f 75%, #0bf 100%);
-    color: #0000;
-    font-size: 3.5em;
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-size: 200%;
-    text-transform: uppercase;
-}
-@keyframes textclip {
-  to {
-    background-position: 200% center;
-  }
-}
-h1:hover{
-  animation: textclip 3s linear infinite;
+h1 {
+  text-transform: uppercase;
 }
 
-
-
-h2{ 
-    background: linear-gradient(45deg, #0bf 0%, #28f 25%, #82f 60%, #28f 75%, #0bf 100%);
-    color: #0000;
-    font-size: 1.5em;
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-size: 200%;
+h1,
+h2 {
+  background: linear-gradient(45deg, #0bf 0%, #28f 25%, #82f 60%, #28f 75%, #0bf 100%);
+  color: #0000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200%;
 }
 
-#warning{
-    color: rgb(100, 0, 0);
+#warning {
+  color: rgb(100, 0, 0);
 }
 
 textarea,
-select{
-    font-size: 16px;
-    font-family: arial;
-    padding: 0.5em;
-    border: 1px solid gray;
-    resize: none;
-    width: 90%;
-    height: 70%;
-    background: #fcf5ffcc;
+select {
+  font-family: arial;
+  padding: 0.5em;
+  border: 1px solid gray;
+  resize: none;
+  width: 90%;
+  height: 70%;
+  background: #fcf5ffcc;
+  z-index: 2;
 }
 
-option{
-    font-size: 16px;
-    font-family: arial;
-    background: #fcf5ffaa;
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.list{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+@media (min-width: 800px) {
 
-.element{
-    width: 50%;
+  .element {
+    width: 45%;
     height: 35em
+  }
+
+  @keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  h1:hover {
+    animation: textclip 3s ease-in-out infinite;
+  }
+
+  @keyframes bganim {
+    20% {
+      rotate: 10deg;
+      translate: 1em -7px;
+    }
+
+    40% {
+      width: 110%;
+      translate: 3px 1.2em;
+    }
+
+    60% {
+      rotate: -25deg;
+      translate: -5px 2px width: 100%;
+    }
+
+    80% {
+      width: 90%;
+      translate: -8px -2px;
+    }
+
+    100% {}
+  }
+
+  .background-image {
+    animation: bganim 10s linear infinite;
+    width: 5em;
+  }
+
+  .bgimg-box {
+    width: 5em;
+    height: 5em;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  * {
+    font-size: 14px;
+  }
+
+  textarea,
+  select {
+    font-size: 16px;
+  }
+
+  #lang {
+    width: 30%;
+  }
+
+  footer {
+    margin-top: -15em;
+  }
 }
 
+@media (max-width: 800px) {
 
+  .element {
+    width: 75%;
+    height: 25em
+  }
 
-@keyframes bganim {
-	20%{
-		rotate: 10deg;
-		translate: 1em -7px;
-	}
-	40%{
-		width: 110%;
-		translate: 3px 1.2em;
-	}
-	60%{
-		rotate: -25deg;
-		translate: -5px 2px
-		width: 100%;
-	}
-	80%{
-		width: 90%;
-		translate: -8px -2px
-	}
-	100%{}
-}
+  .background-image {
+    width: 0em;
+  }
 
-.background-image{
-	animation: bganim 10s linear infinite;
-	width: 5em;
-}
+  h1 {
+    font-size: 300%;
+  }
 
-.bgimg-box{
-	width: 5em;
-	height: 5em;
-    z-index: 1;
+  h2 {
+    font-size: 2em;
+  }
+
+  * {
+    font-size: 10px;
+  }
+
+  #lang {
+    width: 30%;
+  }
 }
