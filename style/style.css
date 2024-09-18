@@ -145,3 +145,7 @@ select {
 #mobile #lang {
   width: 30%;
 }
+
+body{
+  height: 100% !important;
+}
