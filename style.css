@@ -100,3 +100,7 @@ h1 {
 #mobile h1 {
     font-size: 150%;
   }
+
+body{
+  height: 100% !important;
+}
