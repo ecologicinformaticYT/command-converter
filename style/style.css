@@ -90,6 +90,10 @@ select {
   }
 }
 
+#desktop{
+  height: 100%
+}
+
 #desktop .element {
   width: 45%;
   height: 35em
@@ -125,6 +129,10 @@ select {
   margin-top: -15em;
 }
 
+
+#mobile{
+  height: 100%
+}
 
 #mobile .element {
   width: 75%;
