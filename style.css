@@ -1,114 +1,139 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-
 * {
-  z-index: 2;
+  margin: 0;
+  padding: 0;
+  transition: 1s ease;
+  color: white;
+}
+
+::selection {
+  background-color: #fff5;
 }
 
 body {
-  background: 0 0/auto repeat radial-gradient(farthest-side at 0 100%,#c2c2ff 0,#c2e7ff 25%,#ffd1f9 50%,#ecebff 75%,#c2c2ff 100%),0 0 /auto repeat radial-gradient(farthest-corner at 100% 100%,#c2c2ff 0,#ecebff 25%,#ffd1f9 50%,#c2e7ff 75%,#c2c2ff 100%);
-  background-blend-mode: overlay;
+  background-color: #0d1a35;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F4kwallpapers.com%2Fimages%2Fwallpapers%2Ffuturistic-3d-2560x1440-13107.jpg&f=1&nofb=1&ipt=3138ff5427779d87179cc78d5227bece46f64806daa0d90b55a72cfdffc5da70');
+  background-size: 1 1;
+  padding: 2em;
+}
+
+@font-face {
+  font-family: 'ImminentLine';
+  src: url('../Font/imminent-line.ttf') format('truetype');
+}
+
+h1, h2 {
   text-align: center;
-  overflow-x: hidden;
+  font-size: 2em;
 }
 
 h1 {
-  background: linear-gradient(45deg, #0bf 0%, #28f 25%, #82f 60%, #28f 75%, #0bf 100%);
-  color: #0000;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-size: 200%;
-  text-transform: uppercase;
-  font-family: "Orbitron";
-  font-weight: 900;
+  font-family: 'ImminentLine', Arial;
+  font-weight: lighter;
+  margin: 1em;
+  -webkit-text-stroke: 1px lightgray;
+}
+
+h2, .list a p {
+  font-weight: bolder;
+  letter-spacing: 3px;
+  word-spacing: 6px;
+}
+
+textarea,
+textarea:focus,
+.list a,
+select,
+h1 {
+  border: 3px solid white;
+  border-radius: 30px;
+  padding: 10px;
+  outline: none;
+  background-color: transparent;
 }
 
 .list {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-wrap: wrap;
-  align-items: center;
-  height: 700px;
+  align-content: center;
 }
-.element {
-  background: #eee8;
-  margin: 1em;
-  padding: 1em;
+
+.list a {
+  height: 350px;
+  margin: 10px;
+  flex: 1;
+  min-width: 10cm;
+  max-width: 15cm;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
   text-decoration: none;
-  color: #000;
-  border-radius: 20px;
-  transition: 0.5s;
+  position: relative;
 }
 
-@keyframes textclip {
-    to {
-      background-position: 200% center;
-  }
-}
-@keyframes bganim {
-  20% {
-    rotate: 10deg;
-    translate: 1em -7px;
-  }
-
-  40% {
-    width: 110%;
-    translate: 3px 1.2em;
-  }
-
-  60% {
-    rotate: -25deg;
-    translate: -5px 2px
-        width: 100%;
-  }
-
-  80% {
-    width: 90%;
-    translate: -8px -2px;
-  }
-
-  100% {
-  }
+.list a p {
+  transform: rotate(-90deg);
+  position: absolute;
+  bottom: 180px;
 }
 
-#desktop{
-  width: 100%
+.list a .flag {
+  height: 300px;
+  margin: 10px 0 10px 100px;
 }
 
-#desktop .element {
-    width: 20%;
-  }
-#desktop .element:hover {
-    background: #ddd6;
-  }
-#desktop h1:hover {
-  animation: textclip 3s ease-in-out infinite;
-}
-#desktop .background-image {
-  animation: bganim 10s linear infinite;
-  width: 5em;
-}
-#desktop .bgimg-box {
-  width: 5em;
-  height: 5em;
-}
-#desktop h1 {
-  font-size: 2.5em;
+.list a:hover {
+  font-size: 0;
+  border: 0 solid transparent;
 }
 
-#mobile{
-  height: 100%
+.list a:hover .flag {
+  transform: scale(2.3);
 }
 
-#mobile .element {
-    width: 50%;
-  }
-#mobile .background-image {
-    width: 0em;
-  }
-#mobile h1 {
-    font-size: 150%;
-  }
+.langlist {
+  min-height: 80vh;
+}
 
-body{
-  height: 100% !important;
+footer {
+  position: absolute;
+  bottom: 10px;
+  padding: 1em;
+  border-top: 2px solid white;
+  width: 80vw;
+  display: flex;
+}
+
+textarea {
+  resize: none;
+  width: 40vw;
+}
+
+select {
+  text-align: center;
+}
+
+select:focus {
+  outline: none;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: lightblue;
+}
+
+img, select{
+  border-radius: 10px;
+  margin: 10px;
+}
+
+#logo{
+  width: 50px;
+}
+
+p{
+  font-family: Arial;
 }
