@@ -7,33 +7,32 @@ const commandMap = {
     'systemctl': 'sc', 'cron': 'schtasks', 'timedatectl': 'w32tm', 'arp': 'arp', 'route': 'route',
     'mkfs': 'format', 'fdisk': 'diskpart', 'fsck': 'chkdsk', 'grub-mkconfig': 'bcdedit', 'invoke-rc.d': 'gpupdate',
     'getent group': 'gpresult', 'sudo': 'runas', 'gsettings': 'reg', 'bzip2': 'compact', 'bunzip2': 'expand',
+    'dir': 'ls', 'copy': 'cp', 'move': 'mv', 'del': 'rm', 'type': 'cat', 'find': 'grep', 'cls': 'clear',
+    'chdir': 'cd', 'ipconfig': 'ifconfig', 'tasklist': 'ps aux', 'taskkill': 'kill', 'set': 'export',
+    'attrib': 'chmod', 'comp': 'diff', 'fc': 'diff', 'pause': 'read -p "Press any key to continue..."',
+    'sc': 'systemctl', 'schtasks': 'cron', 'w32tm': 'timedatectl', 'format': 'mkfs', 'diskpart': 'fdisk',
+    'sfc': 'fsck', 'chkdsk': 'fsck', 'bootcfg': 'grub-mkconfig', 'bcdedit': 'grub-mkconfig',
+    'gpupdate': 'invoke-rc.d', 'gpresult': 'getent group', 'runas': 'sudo', 'reg': 'gsettings',
+    'compact': 'bzip2', 'expand': 'bunzip2', 'cacls': 'chmod', 'icacls': 'chmod'
 };
-
-// Inverser le commandMap pour une recherche plus rapide
-const invertedCommandMap = Object.fromEntries(Object.entries(commandMap).map(([k, v]) => [v, k]));
 
 function convert_command(input_) {
     try {
         const opt = document.getElementById('mode').value;
         const output = input_.split('\n').map(line => 
             line.split(" ").map(w => {
-                const command = opt === 'windows/linux' ? commandMap[w] : invertedCommandMap[w];
-                return command || w; // Retourne la commande convertie ou le mot d'origine
+                const command = opt === 'windows/linux' ? commandMap[w] : Object.keys(commandMap).find(key => commandMap[key] === w);
+                return command || w;
             }).join(" ")
         ).join("\n");
         
         document.getElementById('OUT').value = output;
     } catch (e) {
-        console.error("Erreur lors de la conversion des commandes:", e);
+        console.log(e);
     }
 }
 
-// Fonction de debounce pour réduire la fréquence des appels
-let debounceTimer;
-document.getElementById("IN").addEventListener("input", function() {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => {
-        const input = this.value;
-        convert_command(input);
-    }, 300); // Délai de 300 ms
-});
+setInterval(function() {
+    const input = document.getElementById("IN").value;
+    convert_command(input);
+}, 1000);
