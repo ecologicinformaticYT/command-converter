@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>command-converter alpha-0.2 - Convertissez des commandes Windows en commandes Debian</title>
+    <link href="../Css/AllStyles.css" rel="stylesheet">
+    <link rel="icon" href="../logo.webp">
+    <script src="../js/cmd-converter.js"></script>
+</head>
+<body>
+    <h1>Convertir</h1>
+    <div id="converter">
+        <div class="list">
+            <div class="element">
+                <h2>Entrée</h2>
+                <textarea id="IN" rows="15"></textarea>
+            </div>
+            <div class="element">
+                <h2>Sortie</h2>
+                <textarea id="OUT" rows="15" readonly></textarea>
+            </div>
+        </div>
+        <select id="mode">
+            <option value="windows/linux">Windows (.bat) ➜ Linux/Debian (.sh)</option>
+            <option value="linux/windows">Linux/Debian (.sh) ➜ Windows (.bat)</option>
+        </select>
+    </div>
+    <div id="warning">
+        <p>ATTENTION : Ce convertisseur peut faire des erreurs</p>
+    </div>
+    <footer>
+            <div>
+                <p>©2024 404A Studio (html et js par Arthur CALON et style par Nitn@f10) - command-converter, tous droits réservés</p>
+                <a href="useterms.html">conditions d'utilisation &amp; politique de confidentialité</a>
+            </div>
+            <img src="../logo.webp" alt="logo de command-converter" id="logo">
+        <select id="language-selector">
+            <option value="../FR/converter.html" id="fr">🇫🇷(FR) français</option>
+            <option value="../EN/converter.html" id="en">🇬🇧(EN) english</option>
+            <option value="../SP/converter.html" id="sp">🇪🇸(SP) español</option>
+        </select>
+    </footer>
+    <script>
+        document.getElementById('language-selector').addEventListener('change', function() {
+            window.location.href = this.value;
+        });
+    </script>
+</body>
+</html>
+
